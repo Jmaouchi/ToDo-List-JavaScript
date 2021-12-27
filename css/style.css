@@ -1,0 +1,45 @@
+*{
+  margin: 0;padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  text-transform: capitalize;
+}
+
+.container{
+  width:360px;
+  display: inline; 
+  margin-top: 50px;
+  margin-left: 50px;
+}
+
+.container-list{
+  display: flex;
+}
+
+.input-field{
+  width: 360px;
+  height: 46px;
+  border: 1px solid black;
+  outline: none;
+  font-size: 25px;
+  vertical-align: middle;
+}
+
+#addToDo {
+  height: 46px;
+  width: 45px;
+  border: 1px solid black;
+  vertical-align: middle;
+  font-size: 30px;
+}
+
+
+.to-dos{
+  margin-top: 25px;
+}
+
+.paragraph-styling{
+  margin: 0;
+  cursor: pointer;
+  font-size: 20px;
+}
