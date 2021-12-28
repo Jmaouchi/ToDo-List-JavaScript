@@ -1,21 +1,37 @@
-let addToDoButton = document.getElementById('addToDo');
-let toDoContainer = document.getElementById('toDoContainer');
+let clickBtn = document.getElementById('addToDo');
 let inputField = document.getElementById('input-field');
+let toDoContainer = document.getElementById('toDoContainer');
 
 
-addToDoButton.addEventListener('click' , function(){
-  //creat a paragraph element
-  var paragraph = document.createElement ('p');
-  // add a paragraph calssName
-  paragraph.className = 'paragraph-styling'
-  // set the paragraph to the input value
+clickBtn.addEventListener('click', function(){
+
+//Phase One and its the phase of creating the element and adding it to the Dom
+
+  //creat a paragraph whenever we click the button and add it to the toDoContainer div
+  const paragraph = document.createElement('p');
+  //add a calass name 
+  paragraph.className= 'paragraph-styling';
+  // the paragraph should be the input value
   paragraph.innerHTML = inputField.value;
-  // append paragraph to the toDoContainer (div)
+  paragraph.style.color='white';
+  // append p to toDoContainer div
   toDoContainer.appendChild(paragraph);
-  //show alert whenever its added
-  if(inputField.value ===''){
+  // add X to paragraph
+  const X = document.createElement('button');
+  // a className
+  X.className = 'delete';
+  //add the icon html
+  X.innerHTML = 'delete dbl click';
+  X.style.marginLeft = '15px';
+  X.style.padding = '15px'
+  //append the link to li
+  paragraph.appendChild(X);
+  // adding a warning whenever the input value is none 
+  if( inputField.value === ''){
     showThis('Please check again')
   function showThis(thisIsTheError){
+  
+  paragraph.appendChild(X).remove()
   // Create a div
   const errorDiv = document.createElement('div');
 
@@ -38,21 +54,21 @@ addToDoButton.addEventListener('click' , function(){
   // Clear error
 function clearError(){
   document.querySelector('.alert').remove();
-}
-}
+    }
   }
-  // remove inputeFiled after adding the paragraph
-  inputField.value = '';
+}
 
+// remove inputeFiled after adding the paragraph
+inputField.value = '';
+//Phase Two and its the phase of deleting the paragraph from the Dom 
 
-  //add a listener on the paragraph
-  paragraph.addEventListener('click' , function(e){
-    paragraph.style.textDecoration = 'line-through';  
+  // listener to click and make a line through the paragraph 
+  paragraph.addEventListener('click', function(){
+    paragraph.style.textDecoration = 'line-through'
   })
-  
-  paragraph.addEventListener('dblclick' , function(e){
-    toDoContainer.removeChild(paragraph); 
+  // listener of double click to remove the paragraph from the Dom
+  paragraph.addEventListener('dblclick', function(){
+    toDoContainer.appendChild(paragraph).remove();
   })
+  //
 })
-
-

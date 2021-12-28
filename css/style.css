@@ -6,14 +6,17 @@
 }
 
 .container{
-  width:360px;
-  display: inline; 
-  margin-top: 50px;
-  margin-left: 50px;
+  padding: 120px;
+  background-color: blue;
+  margin-top: 150px;
+  text-align: center;
+  border-radius: 50px;
 }
 
 .container-list{
   display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .input-field{
@@ -23,6 +26,7 @@
   outline: none;
   font-size: 25px;
   vertical-align: middle;
+  padding: 10px;
 }
 
 #addToDo {
@@ -31,6 +35,12 @@
   border: 1px solid black;
   vertical-align: middle;
   font-size: 30px;
+}
+
+.delete{
+  border-radius:50px;
+  background-color: red;
+  color: white;
 }
 
 
